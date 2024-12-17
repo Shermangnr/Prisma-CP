@@ -9,39 +9,59 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="assets/css/Index.css">
-    <style>
-        
-    </style>
-</head>
-<body>
-    <img class="header-logo" src="logoempresa.png" alt="Logo">
-    <div class="login-container">
-        <h1>Iniciar Sesión</h1>
-        <form method="post" action="EmpleadoControlador">
-            <label for="textNombre">Usuario:</label>
-            <input type="text" id="textNombre" name="textNombre" required>
-            <label for="textContrasena">Contraseña:</label>
-            <input type="password" id="textContrasena" name="textContrasena" required>
-            <button type="submit">Iniciar sesión</button>
-            <input type="hidden" value="4" name="opcion">
-        </form>
-        <div class="error-message">
-            <% if (request.getAttribute("mensajeError") != null) { %>
-                ${mensajeError}
-            <% } else if (request.getAttribute("mensajeExito") != null) { %>
-                ${mensajeExito}
-            <% } %>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+        <link rel="icon" type="image/png" href="assets/iconos/impresora.png">
+        <link rel="stylesheet" href="assets/css/Index.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+    <body>
+        <img class="header-logo" src="assets/login-trabajo.jpg" alt="Login trabajo">
+        <div class="card login-container">
+            <div class="card-title">
+                <h2>Iniciar Sesión</h2>
+            </div>
+
+            <div class="card-body">
+                <form method="post" action="EmpleadoControlador">
+                    <label class="form-label" for="textNombre">Usuario:</label>
+                    <input class="form-control" type="text" id="textNombre" name="textNombre" required>
+                    <label class="form-label" for="textContrasena">Contraseña:</label>
+                    <input class="form-control" type="password" id="textContrasena" name="textContrasena" required>
+                    <button class="btn btn-primary mt-1" type="submit">Iniciar sesión</button>
+                    <input type="hidden" value="4" name="opcion">
+                </form>
+                <%-- Mensajes de error y éxito --%>
+                <% if (request.getAttribute("mensajeError") != null) { %>
+                <div id="mensaje" class="alert alert-danger" role="alert">
+                    ${mensajeError}
+                </div>
+                <% } else if (request.getAttribute("mensajeExito") != null) { %>
+                <div id="mensaje" class="success-message">
+                    ${mensajeExito}
+                </div>
+                <% }%>
+            </div>
         </div>
-    </div>
-        
+
         <div class="footer-logo">PrismaCP-Aplication <span>&COPY;</span> </div>
 
         <footer>&copy; Grupo Softeam</footer>
 
-</body>
+    </body>
 </html>
+
+<script>
+    // Función para ocultar el mensaje después de 10 segundos
+    window.onload = function () {
+        setTimeout(function () {
+            var message = document.getElementById("mensaje");
+            if (message) {
+                message.style.display = "none";
+            }
+        }, 5000); // 10000 milisegundos = 10 segundos
+    };
+</script>
