@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author SHERMAN
  */
+
 @WebServlet(name = "Sesiones", urlPatterns = {"/Sesiones"})
 public class Sesiones extends HttpServlet {
 
@@ -29,20 +30,22 @@ public class Sesiones extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        HttpSession buscarSesion = request.getSession();
-        buscarSesion.removeAttribute("DatosDeSesion");
-        buscarSesion.invalidate();
+        throws ServletException, IOException {
+    response.setContentType("text/html;charset=UTF-8");
+    
+    String action = request.getParameter("action");
+    if ("logout".equals(action)) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        response.sendRedirect(request.getContextPath() + "/Index.jsp"); // Redirige al login o inicio
+    } else {
         request.getRequestDispatcher("Index.jsp").forward(request, response);
-        
-        
-        
-        
-        
     }
+}
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -84,3 +87,5 @@ public class Sesiones extends HttpServlet {
     }// </editor-fold>
 
 }
+
+
