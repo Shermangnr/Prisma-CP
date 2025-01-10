@@ -8,19 +8,13 @@
 <%@page import="java.util.List"%>
 <%@page import="ModeloDAO.UsuarioDao"%>
 <%@page import="ModeloVO.UsuarioVo"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
-
     <head>
-
         <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        
-
-
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">      
         <meta content="" name="description">
         <meta content="" name="keywords">
 
@@ -28,22 +22,25 @@
         <link rel="icon" type="image/png" href="assets/iconos/impresora.png">
 
         <!-- Fuentes de Google -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <!-- Vendor CSS Files -->
+        <!-- Archivos CSS -->
         <link href="assets/vendor/aos/aos.css" rel="stylesheet">
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
         <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-        <!-- Template Main CSS File -->
         <link href="assets/css/menu_principal.css" rel="stylesheet">
 
         <!-- Sweet Alert2 -->
         <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+        <!-- DataTyped -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     </head>
 
@@ -70,7 +67,7 @@
 
                 <div class="profile">
                     <img src="assets/img/logoiniciosesion.png" alt="" class="img-fluid rounded-circle">
-                    <h1 class="perfil text-light"><a href="#" onclick="mostrarContenido('PaginaInicio.jsp')"><i class="bx bx-home mx-1"></i> <%=usuario%></a></h1>
+                    <h1 class="perfil text-light"><a href="#" onclick="mostrarContenido('MenuPrincipal.jsp')"><i class="bx bx-home mx-1"></i> <%=usuario%></a></h1>
                 </div>
 
                 <%
@@ -99,44 +96,30 @@
 
                     <ul>
                         <li><a href="#" onclick="mostrarContenido('RegistrarUsuario.jsp')" class="nav-link scrollto"> <i class='bx bx-user-plus'></i> <span>Registrar Usuario</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('Disenos.jsp')" class="nav-link scrollto"> <i class='bx bx-spray-can' ></i> <span>Diseños</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('Inventario.jsp')" class="nav-link scrollto"> <i class='bx bx-layer'></i> <span>Inventario</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('OrdenProduccion.jsp')" class="nav-link scrollto"> <i class='bx bx-list-check'></i> <span>Ordenes a Producción</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('AreaProduccion.jsp')" class="nav-link scrollto"> <i class='bx bx-wrench'></i> <span>Area de Producción</span></a></li>
-
-                        <li><a href="#" onclick="mostrarContenido('Facturas.jsp')" class="nav-link scrollto"> <i class='bx bx-file'></i> <span>Facturas</span></a></li>
-
-
-                        <br><br><br>
-
-
-
+                        <li><a href="#" onclick="mostrarContenido('Facturas.jsp')" class="nav-link scrollto"> <i class='bx bx-file'></i> <span>Facturas</span></a></li>                        
                     </ul>
 
                     <%
                     } else if (idCargo.equals("2")) {
                     %>
+
                     <ul>
                         <li><a href="#" onclick="mostrarContenido('Inventario.jsp')" class="nav-link scrollto"> <i class='bx bx-layer'></i> <span>Inventario</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('AreaProduccion.jsp')" class="nav-link scrollto"> <i class='bx bx-wrench'></i> <span>Area de Producción</span></a></li>
-
                     </ul>
 
                     <%
                     } else if (idCargo.equals("3")) {
                     %>
+
                     <ul>
                         <li><a href="#" onclick="mostrarContenido('Disenos.jsp')" class="nav-link scrollto"> <i class='bx bx-spray-can' ></i> <span>Diseños</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('OrdenProduccion.jsp')" class="nav-link scrollto"> <i class='bx bx-list-check'></i> <span>Ordenes a Producción</span></a></li>
-
                         <li><a href="#" onclick="mostrarContenido('Facturas.jsp')" class="nav-link scrollto"> <i class='bx bx-file'></i> <span>Facturas</span></a></li>
-
                     </ul>
                     <%
                         }
@@ -205,31 +188,69 @@
             <%= request.getAttribute("mensajeExito")%>
             <% }%>
         </div>
+
+        <div class="contenedor-principal">
+            <div class="bienvenida">
+                <h1 class="titulo-bienvenida">¡Bienvenido <%=usuario%>!</h1>
+                <p class="mensaje-bienvenida">Para iniciar con una tarea haga click en
+                    <span class="typed" 
+                          data-typed-items="<%
+                              if (idCargo.equals("1")) {
+                                  out.print("Registrar Usuario., Diseños., Inventario., Ordenes a Producción., Area de Producción., Facturas.");
+                              } else if (idCargo.equals("2")) {
+                                  out.print("Inventario., Area de Producción.");
+                              } else if (idCargo.equals("3")) {
+                                  out.print("Diseños., Ordenes a Producción., Facturas.");
+                              } else {
+                                  out.print("Bienvenido, Seleccione una opción");
+                              }
+                          %>">
+                    </span>
+                </p>
+            </div>
+        </div>
+
     </body>
 </html>
 
+<!-- JS de DataTyped -->
 <script>
-                            console.log("Filtro de la tabla proximo a llamar");
-                            function filtrarTabla() {
-                                console.log("Filtro de la tabla");
-                                var input, filtro, tabla, tr, td, i, txtValue;
-                                input = document.getElementById("busquedaMaterial");
-                                filtro = input.value.toUpperCase();
-                                tabla = document.getElementById("tablaInventario");
-                                tr = tabla.getElementsByTagName("tr");
+                            // Obtener los ítems desde el atributo data-typed-items
+                            const typedElement = document.querySelector('.typed');
+                            const items = typedElement.getAttribute('data-typed-items').split(', ');
 
-                                for (i = 0; i < tr.length; i++) {
-                                    td = tr[i].getElementsByTagName("td")[4]; // Cambia el índice si el nombre del material no está en la cuarta columna
-                                    if (td) {
-                                        txtValue = td.textContent || td.innerText;
-                                        if (txtValue.toUpperCase().indexOf(filtro) > -1) {
-                                            tr[i].style.display = "";
-                                        } else {
-                                            tr[i].style.display = "none";
-                                        }
-                                    }
-                                }
-                            }
+                            // Inicializar Typed.js
+                            new Typed('.typed', {
+                                strings: items, // Pasar los ítems como strings
+                                typeSpeed: 70, // Velocidad de tipeo
+                                backSpeed: 40, // Velocidad al borrar
+                                backDelay: 2000, // Retraso antes de borrar
+                                loop: true       // Bucle infinito
+                            });
+</script>
+
+<script>
+    console.log("Filtro de la tabla proximo a llamar");
+    function filtrarTabla() {
+        console.log("Filtro de la tabla");
+        var input, filtro, tabla, tr, td, i, txtValue;
+        input = document.getElementById("busquedaMaterial");
+        filtro = input.value.toUpperCase();
+        tabla = document.getElementById("tablaInventario");
+        tr = tabla.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4]; // Cambia el índice si el nombre del material no está en la cuarta columna
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filtro) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
 </script>
 
 <script>

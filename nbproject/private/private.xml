@@ -5,7 +5,14 @@
         <group>
             <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/assets/css/pagina_inicio.css</file>
             <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/Index.jsp</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/PaginaInicio.jsp</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/MenuPrincipal.jsp</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/RegistrarUsuario.jsp</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/assets/css/menu_principal.css</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/src/java/ModeloDAO/UsuarioDao.java</file>
             <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/assets/css/Index.css</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/src/java/Controlador/Sesiones.java</file>
+            <file>file:/C:/Users/usuario/Desktop/Proyecto_PrismaCP_JAVA/web/assets/css/style.css</file>
         </group>
     </open-files>
 </project-private>

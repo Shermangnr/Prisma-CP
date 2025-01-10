@@ -1,7 +1,15 @@
 .pagina-inicial {
-    background-color: #ed3c0d;
+    background-color: #fff;
+    padding: 2%;
+    margin-top: 300px;
+    font-family: "Kulim Park", serif !important;
+    color: #040b14;
 }
 
-body {
-    background-color: #ed3c0d;
+.bienvenido {
+    font-size: 3rem;
+}
+
+.tareas {
+    font-size: 1.5rem;
 }
