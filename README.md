@@ -75,4 +75,4 @@ Prisma-CP/
 ## ✒️ Autor
 
 Desarrollado por **German Alirio Bermúdez Buitrago**  
-💼 [LinkedIn](https://www.linkedin.com/) | 💻 [GitHub](https://github.com/)
+💼 [LinkedIn](www.linkedin.com/in/german-bermudez-desarrolladorfullstack) | 💻 [GitHub](https://github.com/Shermangnr)
