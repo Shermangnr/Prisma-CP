@@ -48,14 +48,8 @@ Prisma-CP/
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/prisma-cp.git
+   git clone https://github.com/Shermangnr/Prisma-CP.git
    ```
-
-2. Configura la base de datos MySQL con el script ubicado en:
-   ```bash
-   /database/schema.sql
-   ```
-
 3. Ajusta las credenciales de conexión en el archivo de configuración del proyecto.
 
 4. Compila y ejecuta el proyecto en tu entorno Java.
